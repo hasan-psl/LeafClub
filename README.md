@@ -1,4 +1,4 @@
-# 🍃 LeafClub Backend
+# 🍃 LeafClub — University Club Management System
 
 > [!WARNING]
 > ### 🚧 Project Status: Active Work In Progress
@@ -10,7 +10,7 @@
 
 ## 📌 Overview
 
-**LeafClub** is a modern, full-stack **University Club Management System**. This repository contains the core backend REST API powering student club registrations, event management, membership tracking, financial transactions, and administrative management dashboards.
+**LeafClub** is a modern, full-stack **University Club Management System**. This repository currently contains the core backend REST API powering student club registrations, event management, membership tracking, financial transactions, and administrative management dashboards with full frontend yet to be developed.
 
 ---
 
