@@ -1,34 +1,68 @@
-# LeafClub Backend
+# 🍃 LeafClub Backend
 
-LeafClub is a full-stack University Club Management System. This repository contains the backend REST API service powering student club registrations, event management, membership tracking, and administrative dashboards.
-
-## Technology Stack
-
-- **Python 3.11+**
-- **FastAPI** - High-performance async web application framework
-- **SQLAlchemy 2.0** - Python SQL Toolkit and Object Relational Mapper
-- **Alembic** - Database migration tool for SQLAlchemy
-- **PostgreSQL** - Relational database engine
-- **Pydantic v2** - Data validation and settings management
-- **pytest** - Test framework
+> [!WARNING]
+> ### 🚧 Project Status: Active Work In Progress
+> **LeafClub** is currently in early active development. There is **no stable, beta, or alpha release** available yet.
+> 
+> APIs, architecture, and database schemas are evolving rapidly. Please be patient as we build out the full backend system!
 
 ---
 
-## Local Backend Setup Prerequisites
+## 📌 Overview
 
-- **Python 3.11+** installed on system
-- **PostgreSQL** server instance running locally or accessible via network
+**LeafClub** is a modern, full-stack **University Club Management System**. This repository contains the core backend REST API powering student club registrations, event management, membership tracking, financial transactions, and administrative management dashboards.
 
 ---
 
-## Getting Started
+## 🛠️ Technology Stack
 
-### 1. Environment Setup
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Language** | Python 3.11+ | Modern, typed Python core |
+| **Framework** | FastAPI | High-performance, async web application framework |
+| **ORM** | SQLAlchemy 2.0 | Type-safe SQL toolkit and ORM |
+| **Migrations** | Alembic | Database schema version control |
+| **Database** | PostgreSQL | Enterprise-grade relational database |
+| **Validation** | Pydantic v2 | Data serialization, schemas, and settings management |
+| **Testing** | pytest | Automated test framework |
 
-Create and activate a virtual environment:
+---
+
+## 📂 Project Structure
+
+```text
+LeafClub/
+├── app/
+│   ├── api/          # Route handlers & endpoints (health, etc.)
+│   ├── core/         # Settings configuration & database session manager
+│   ├── models/       # SQLAlchemy ORM declarative models
+│   └── main.py       # FastAPI application entry point
+├── alembic/          # Database migration scripts & environments
+├── tests/            # Automated test suite (pytest)
+├── .env.example      # Example environment configuration template
+├── .gitignore        # Version control ignore rules
+├── pyproject.toml    # Project metadata & dependencies
+├── requirements.txt  # Python package requirements
+└── README.md         # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed locally:
+* **Python 3.11+**
+* **PostgreSQL** server (version 14+)
+
+### 1. Clone & Environment Setup
 
 ```bash
+# Create a virtual environment
 python3 -m venv .venv
+
+# Activate the virtual environment
 source .venv/bin/activate
 ```
 
@@ -40,37 +74,50 @@ pip install -r requirements.txt
 
 ### 3. Configure Environment Variables
 
-Copy the example environment file and update database credentials if necessary:
+Create your local `.env` file from `.env.example`:
 
 ```bash
 cp .env.example .env
 ```
 
-### 4. Running Database Migrations
+Default configuration (`.env`):
+```env
+PROJECT_NAME=LeafClub
+ENVIRONMENT=development
+DEBUG=True
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/leafclub_db
+```
+
+### 4. Run Database Migrations
 
 ```bash
 alembic upgrade head
 ```
 
-### 5. Running the Backend Server
+### 5. Start Development Server
 
-Start the FastAPI development server with live reload:
+Launch the FastAPI live-reload server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-The API will be available at:
-- **API Base**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-- **Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
-- **Interactive Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **ReDoc**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+---
+
+## 📍 API Reference
+
+| Endpoint | Method | Description |
+| :--- | :---: | :--- |
+| `/` | `GET` | API welcome payload & quick links |
+| `/health` | `GET` | Health check & system operational status |
+| `/docs` | `GET` | Interactive Swagger UI documentation |
+| `/redoc` | `GET` | ReDoc interactive API reference |
 
 ---
 
-## Running Tests
+## 🧪 Testing
 
-Execute the test suite using `pytest`:
+Run the full automated test suite using `pytest`:
 
 ```bash
 pytest
@@ -78,11 +125,12 @@ pytest
 
 ---
 
-## License
+## 📜 License & Copyright
 
-Licensed under the [GNU General Public License v3.0](LICENSE).
+This project is open-source software licensed under the **[GNU General Public License v3.0](LICENSE)**.
 
-Copyright (C) 2026 **Khondokar Shazid Hassan** (`hasan/psl`)
-- GitHub Email: `hasanimroz.personal@gmail.com`
-- Official Email: `shazidhasan.official@gmail.com`
+**Copyright (C) 2026 Khondokar Shazid Hassan (`hasan-psl`)**
 
+* **GitHub Handle**: [`hasan-psl`](https://github.com/hasan-psl)
+* **GitHub Email**: [`hasanimroz.personal@gmail.com`](mailto:hasanimroz.personal@gmail.com)
+* **Official Email**: [`shazidhasan.official@gmail.com`](mailto:shazidhasan.official@gmail.com)
