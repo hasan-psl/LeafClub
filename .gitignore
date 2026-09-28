@@ -1,6 +1,7 @@
 # Environment variables
 .env
 .env.local
+.env.*.local
 
 # Python
 __pycache__/
@@ -28,14 +29,27 @@ wheels/
 .installed.cfg
 *.egg
 
-# Testing & Coverage
+# Testing & Type Checking
 .pytest_cache/
 .coverage
 htmlcov/
 .coverage.*
+.mypy_cache/
+.ruff_cache/
+
+# Databases & Logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
 
 # IDEs & Editors
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
